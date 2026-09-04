@@ -13,7 +13,7 @@ def valida_nif(numero):
     if not numero.isdigit() or len(numero) != EXPECTED_DIGITS: 
         return False
     soma = sum([int(dig) * (EXPECTED_DIGITS - pos) for pos, dig in enumerate(numero)])
-    resto = soma % 10
+    resto = soma % 11
     if (numero[-1] == '0' and resto == 1):
         resto = (soma + 10) % 11
     return resto == 0
