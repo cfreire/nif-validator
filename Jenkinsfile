@@ -98,7 +98,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        sshagent(credentialsId:['aws-rhel-key-20241125']) {
+        sshagent(credentials:['aws-rhel-key-20241125']) {
           sh"""
           ssh -o StrictHostKeyChecking=no redhat@18.197.141.98 'docker run -d -p 8080:9046 cfreire70/nif-validator'
           """
